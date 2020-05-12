@@ -3,9 +3,9 @@
 A Hyperapp v2 + Tailwind + Parcel Boilerplate.
 
 ## Dependencies
-- Hyperapp 2.0.4
-- Parcel 1.12.4
-- Tailwindcss 1.4.6
+- Hyperapp v2
+- Parcel v1.12
+- Tailwindcss v1.4
 
 ## Installation
 
@@ -27,7 +27,7 @@ Run the hot-reloading dev server - http://localhost:1234
 npm start
 ```
 
-Tailor Tailwind to your need by [configuring `tailwind.config.js`] (https://tailwindcss.com/docs/configuration), then generate css
+Tailor Tailwind to your need by [configuring `tailwind.config.js`](https://tailwindcss.com/docs/configuration), then generate css
 
 ```bash
 npm run tailwind
