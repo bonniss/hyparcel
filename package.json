@@ -1,0 +1,26 @@
+{
+  "name": "hypermix",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html --open --no-source-maps",
+    "build": "rm -rf .cache && rm -rf dist && parcel build src/index.html --public-url ./dist --no-source-maps",
+    "tailwind": "npx tailwindcss build src/style.tailwind.css -o src/css/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.9.6",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "bulma": "^0.8.2",
+    "hyperapp": "^2.0.4",
+    "parcel-bundler": "^1.12.4",
+    "ramda": "^0.27.0",
+    "tailwindcss": "^1.4.6"
+  }
+}
