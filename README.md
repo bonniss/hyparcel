@@ -1,40 +1,48 @@
 # Hyparcel
 
-A Hyperapp v2 + Tailwind + Parcel Boilerplate.
+A Hyperapp v2 + TailwindCSS + Parcel Boilerplate, with PurgeCSS intergrated in production.
 
 ## Dependencies
+
 - Hyperapp v2
 - Parcel v1.12
 - Tailwindcss v1.4
 
-## Installation
+## Get Started
 
 ```bash
 git clone https://github.com/bonniss/hyparcel.git
+cd hyparcel
 ```
 
-## Usage
-
-Install dependencies
+- Install dependencies
 
 ```bash
 npm install
 ```
 
-Run the hot-reloading dev server - http://localhost:1234
+- Run the hot-reloading dev server - http://localhost:1234
 
 ```bash
-npm start
+npm run dev
 ```
 
-Tailor Tailwind to your need by [configuring `tailwind.config.js`](https://tailwindcss.com/docs/configuration), then generate css
+- Build assets for production
 
 ```bash
-npm run tailwind
+npm run prod
 ```
 
-Build assets for production
+## Controlling CSS
+
+In development, you should have full power on utilites offered by Tailwind. Therefore, no CSS purging and minification are executed to keep bundling fast.
+
+Tailor Tailwind to your need by [configuring `tailwind.config.js`](https://tailwindcss.com/docs/configuration). The CSS seed file is located at `src/css/main.pcss`. Note that as Purgecss is configured in `postcss.config.js`, you should keep `tailwind.config.js`'s `purge: false` to suppress warnings when bundling for production.
+
+If you want to generate CSS only:
 
 ```bash
-npm run build
+npm run build:css
 ```
+
+By default, a verbose output is located at `src/css/style.css`.

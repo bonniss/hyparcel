@@ -1,6 +1,6 @@
 import { h, app } from "hyperapp";
 import ProductDetail from './components/product-detail';
-import product from './data/product.json';
+import product from '../data/product.json';
 
 const state = {
     product,
