@@ -1,6 +1,6 @@
 # Hyparcel
 
-A Hyperapp v2 + TailwindCSS + Parcel Boilerplate, with PurgeCSS intergrated in production.
+A Hyperapp v2 + TailwindCSS + Parcel boilerplate, with PurgeCSS intergrated in production.
 
 ## Dependencies
 
