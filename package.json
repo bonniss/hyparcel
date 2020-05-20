@@ -1,7 +1,7 @@
 {
-  "name": "hypermix",
+  "name": "hyparcel",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Hyperapp v2 + TailwindCSS + Parcel Boilerplate, with PurgeCSS intergrated in production",
   "main": "index.js",
   "scripts": {
     "build:css": "postcss src/css/main.pcss -o src/css/style.css",
