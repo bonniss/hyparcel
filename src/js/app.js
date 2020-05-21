@@ -1,55 +1,23 @@
 import { h, app } from "hyperapp";
-import ProductDetail from './components/product-detail';
-import product from '../data/product.json';
+import appState from "./states/app.state";
+import About from "./components/About";
+import TabList from "./components/TabList";
+import Counter from "./components/Counter";
+import Users from "./components/Users";
 
-const state = {
-    product,
-    currentVariant: {},
-    activeImageSet: [],
-    currentImage: {},
-    relatedProducts: []
-};
+const InitApp = (state) => state;
 
-const InitApp = stt => {
-    const {
-        product,
-        currentVariant,
-        // activeImageSet,
-        // currentImage,
-        relatedProducts
-    } = stt;
-
-    const hasVariants = 'variants' in product;
-
-    let activeImageSet = {};
-    let currentImage = {};
-
-    if (hasVariants) {
-        const { variants } = product;
-        if(variants.length) {
-            activeImageSet = variants[0].image_sets;
-        }
-    } else {
-        activeImageSet = product.main_image_set;
-    }
-
-    if('images' in activeImageSet) {
-        currentImage = activeImageSet.images[0];
-    }
-
-    return {
-        ...stt,
-        activeImageSet,
-        currentImage
-    };
-};
-
-const actions = {};
-
-const view = () => <h1 class="title"><ProductDetail state={state} /></h1>;
+const App = () => (state) => (
+    <div class="container py-8">
+        <About />
+        <TabList state={state} />
+        {state.currentTab === "counter" && <Counter state={state} />}
+        {state.currentTab === "http" && <Users state={state} />}
+    </div>
+);
 
 app({
-    init: () => InitApp(state),
-    view,
-    node: document.querySelector("#catlin")
+    init: InitApp(appState),
+    view: <App />,
+    node: document.querySelector("#nebula"),
 });

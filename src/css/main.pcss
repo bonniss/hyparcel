@@ -4,9 +4,142 @@
 @tailwind components;
 /* purgecss end ignore */
 
+/**
+* [START] CUSTOM TAILWIND COMPONENTS
+*/
+p.tagline > a {
+    @apply underline font-semibold;
+}
+/**
+* [END] CUSTOM TAILWIND COMPONENTS
+*/
+
 @tailwind utilities;
 
-/* YOUR CSS GOES HERE */
-.my-red-box {
-    background: red;
+/**
+* YOUR CSS BELOW
+*/
+button.hover-bubble {
+    z-index: 1;
+    position: relative;
+    color: white;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    background-color: hsl(236, 32%, 26%);
+    overflow: hidden;
+    transition: color 0.2s ease-in-out;
+}
+
+button.hover-bubble::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background-color: #3cefff;
+    transform-origin: center;
+    transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+    transition: transform 0.25s ease-in-out;
+}
+
+button.hover-bubble:hover {
+    cursor: pointer;
+    color: #161616;
+}
+
+button.hover-bubble:hover::before {
+    transform: translate3d(-50%, -50%, 0) scale3d(15, 15, 15);
+}
+
+.underlined-input {
+    position: relative;
+}
+
+.underlined-input > input {
+    width: 4em;
+    font-size: inherit;
+    font-family: inherit;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-bottom-color: hsla(341, 97%, 59%, 0.2);
+}
+
+.underlined-input > input:focus {
+    outline: none;
+}
+
+.underlined-input > input::placeholder {
+    color: hsla(0, 0%, 100%, 0.6);
+}
+
+.underlined-input > span {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    height: 1px;
+    opacity: 0;
+    background-color: #fc2f70;
+    transform-origin: center;
+    transform: translate(-50%, 0) scaleX(0);
+    transition: all 0.3s ease;
+}
+
+.underlined-input > input:focus ~ span {
+    transform: translate(-50%, 0) scaleX(1);
+    opacity: 1;
+}
+
+.overlay-dark {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.7);
+}
+
+.overlay-dark > .loading-dots {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loading-dots {
+    width: 3.5em;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.loading-dots div {
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+    background-color: #fc2f70;
+    animation: fade 0.8s ease-in-out alternate infinite;
+}
+
+.loading-dots div:nth-of-type(1) {
+    animation-delay: -0.4s;
+}
+
+.loading-dots div:nth-of-type(2) {
+    animation-delay: -0.2s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
