@@ -35,7 +35,7 @@ npm run prod
 
 ## Controlling CSS
 
-In development, you should have full power on utilites offered by Tailwind. Therefore, no CSS purging and minification are executed to keep bundling fast.
+In development, you should have full power on utilities offered by Tailwind. Therefore, no CSS purging and minification are executed to keep bundling fast.
 
 Tailor Tailwind to your need by [configuring `tailwind.config.js`](https://tailwindcss.com/docs/configuration). The CSS seed file is located at `src/css/main.pcss`. Note that as Purgecss is configured in `postcss.config.js`, you should keep `tailwind.config.js`'s `purge: false` to suppress warnings when bundling for production.
 
